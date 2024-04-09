@@ -7,7 +7,7 @@ const StateSelector = ({ selectedCountry }) => {
   useEffect(() => {
     const fetchStates = async () => {
       try {
-        if (!selectedCountry) return; // Don't fetch if no country selected
+        if (!selectedCountry) return; 
         const response = await fetch(`https://countriesnow.space/api/v0.1/countries/states/${selectedCountry}`);
         if (!response.ok) {
           throw new Error('Failed to fetch state data');

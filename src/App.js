@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <CountrySelector onChange={handleCountryChange} />
+      <CountrySelector onCountryChange={handleCountryChange} />
       {selectedCountry && <StateSelector selectedCountry={selectedCountry} />}
     </div>
   );

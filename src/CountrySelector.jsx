@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const CountrySelector = () => {
+const CountrySelector = ({ onCountryChange }) => {
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState("");
 
+
   const handleCountryChange = (event) => {
-    setSelectedCountryId(event.target.value);
+    const countryId = event.target.value;
+    setSelectedCountryId(countryId);
+    onCountryChange(countryId); 
   };
 
   useEffect(() => {
@@ -49,6 +52,7 @@ const CountrySelector = () => {
           >
             {country.country}
           </option>
+
         ))}
       </select>
     
